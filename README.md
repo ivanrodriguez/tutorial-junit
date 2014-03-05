@@ -4,10 +4,10 @@ Intro a JUnit
 Tutorial simple de JUnit por medio de una aplicación para calcular créditos preaprobados a clientes de un banco. En el tutorial se muestran las siguientes funcionalidades:
 
 - AssertEquals
-- Fixtures (Setup)
-- Objetos auxiliares (Stubs, Mocks)
+- Fixtures (SetUp)
+- Objetos auxiliares (Mock objects)
 - Prueba de Excepciones
-- Pruebas con parámetros
+- Pruebas con parámetros (parameterized testing)
 
 ## Descripción de la aplicación
 
@@ -33,7 +33,7 @@ Fórmula de Pago Fijo
 
 ![alt text](http://www.financeformulas.net/Formula%20Images/Loan%20Payment%20Formula%201.gif "Formula pago fijo")
 
-En los archivos del tutorial también hay un Excel llamado "ejemplo-12meses-20mil.xls" (también funciona en LibreOffice) que tiene el ejemplo para un empleado que tiene ingresos mensuales de $20,000 y cotiza un crédito a 12 meses (que es el caso que se usa para los tests en el tutorial).
+En los archivos del tutorial también hay un Excel llamado "ejemplo-12meses-20mil.xls" (también funciona en LibreOffice) que tiene el ejemplo para un empleado que tiene ingresos mensuales de $20,000 y cotiza un crédito a 12 meses (que es el caso que se usa para los tests en el tutorial). Si prefieres la versión de Google Docs está en [https://docs.google.com/spreadsheet/ccc?key=0AtbgPmcz_7RCdEg5V2RKaGdsRW5HaWRoSEdfbVlFdEE&usp=sharing](https://docs.google.com/spreadsheet/ccc?key=0AtbgPmcz_7RCdEg5V2RKaGdsRW5HaWRoSEdfbVlFdEE&usp=sharing)
 
 ## Etapa 1
 
@@ -54,13 +54,15 @@ Con base en el Excel y las especificaciones de la aplicación, se diseña una cl
 ## Etapa 3
 
 - Implementación de cálculo de monto preabrobado 
-- Mock classes para quitar dependencias con base de datos de clientes
+- Mock class del Cliente para quitar dependencias con base de datos
 
 ## Etapa 4
 
-- Implementación de cálculo saldos finales
+- Implementación de getSaldoRemanente()
+- Implementación de getTotalIntereses
 - Pruebas con parámetros
 
 ## Etapa 5
 
+- Pruebas para todo lo que puede salir mal
 - Manejos de error y validación de input de usuario
