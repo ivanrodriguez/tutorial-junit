@@ -39,11 +39,11 @@ En los archivos del tutorial también hay un Excel llamado "ejemplo-12meses-20mi
 
 Con base en el Excel y las especificaciones de la aplicación, se diseña una clase "Calculadora" y se hace en JUnit una primera prueba de cómo sería la interacción con esta clase.
 
-![uml clase calculadora](http://yuml.me/diagram/scruffy;/class/[Calculadora%7C-plazo;-tasaInteres;-montoCredito;-cliente;-amortizaciones%7C+getTotalIntereses();+getPagoFijo();+getSaldoRemanente(mes);-calculaAmortizaciones()])
+![uml clase calculadora](http://yuml.me/diagram/plain;scale:80;/class/[Calculadora%7C-plazo;-tasaInteres;-montoCredito;-cliente;-amortizaciones%7C+getTotalIntereses();+getPagoFijo();+getSaldoRemanente(mes);-calculaAmortizaciones()])
 
-![uml clase Cliente](http://yuml.me/diagram/scruffy;/class/[Cliente|-id;-nombre;-ingresosMensuales|+find()])
+![uml clase cliente](http://yuml.me/diagram/plain;scale:80;/class/[Cliente|-id;-nombre;-ingresosMensuales|+find()])
 
-![uml clase amortizaicon](http://yuml.me/diagram/scruffy;/class/[Cliente%7C-id;-nombre;-ingresosMensuales%7C+find()])
+![uml clase amortizaicon](http://yuml.me/diagram/plain;scale:80;/class/[Amortizacion%7C-saldoInicial;-pagoCapital;-pagoInteres;saldoFinal])
 
 - Definición de todos los tests/pruebas que debe pasar
 - Margen de error
