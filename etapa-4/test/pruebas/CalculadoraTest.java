@@ -27,11 +27,6 @@ public class CalculadoraTest {
         assertEquals(calcPruebas.getTotalIntereses(), new Float("14636.17"), MARGEN_ERROR);
     }
 
-    @Test
-    public void testGetSaldoRemanente() {
-        assertEquals(calcPruebas.getSaldoRemanente(12), new Float(0.0), MARGEN_ERROR);
-    }
-
     @Before
     public void setUp() {
         calcPruebas = new Calculadora();

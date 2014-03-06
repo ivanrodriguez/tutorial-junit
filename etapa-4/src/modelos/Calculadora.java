@@ -29,6 +29,7 @@ public class Calculadora {
     }
 
     public Float getTotalIntereses() {
+        calculaAmortizaciones();
         Float totalIntereses = new Float(0);
         for (Amortizacion amort : amortizaciones) {
             totalIntereses += amort.getPagoInteres();
@@ -46,6 +47,7 @@ public class Calculadora {
     }
 
     public Float getSaldoRemanente(Integer mes) {
+        calculaAmortizaciones();
         Amortizacion amort = (Amortizacion) amortizaciones.get(mes - 1);
         return amort.getSaldoFinal();
     }
@@ -59,9 +61,22 @@ public class Calculadora {
         return montoCredito;
     }
 
-    public void calculaAmortizaciones() {
+    private void calculaAmortizaciones() {
         amortizaciones = new ArrayList<Amortizacion>();
-        // TODO: Aquí se construye el array
+        // Primer mes
+        Float pagoInteres = montoCredito * new Float(tasaInteres / 12);
+        Float pagoCapital = getPagoFijo() - pagoInteres;
+        Float saldoFinal = montoCredito - pagoCapital;
+        Amortizacion amort = new Amortizacion(montoCredito, pagoCapital, pagoInteres, saldoFinal);
+        amortizaciones.add(amort);
+        // Otros meses
+        for (int mes = 2; mes <= plazo; mes++) {
+            pagoInteres = amortizaciones.get(mes - 2).getSaldoFinal() * new Float(tasaInteres / 12);
+            pagoCapital = getPagoFijo() - pagoInteres;
+            saldoFinal = amortizaciones.get(mes - 2).getSaldoFinal() - pagoCapital;
+            amort = new Amortizacion(amortizaciones.get(mes - 2).getSaldoFinal(), pagoCapital, pagoInteres, saldoFinal);
+            amortizaciones.add(amort);
+        }
     }
 
 }
